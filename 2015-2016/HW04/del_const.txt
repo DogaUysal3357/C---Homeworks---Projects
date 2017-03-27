@@ -1,0 +1,26 @@
+
+void Cell::setX() {
+    if (xStatic[xStatic.size() - 1] == 'z') {
+        for(int i=0; i<=xStatic.size()-1; i++){
+            xStatic[i]='a';           
+        }
+        xStatic + "a";
+    }
+
+    xStatic[xStatic.size() - 1]++;
+    x = xStatic;
+    tableCounterX++;
+    if (tableCounterX == Reversi::getTableX()) {
+        setCounterXToZero();
+        xStatic = "a";
+    }
+}
+
+void Cell::setY() {
+    y = yStatic;
+    tableCounterY++;
+    if (tableCounterY == Reversi::getTableY()) {
+        setCounterYToZero();
+        yStatic++;
+    }
+}
